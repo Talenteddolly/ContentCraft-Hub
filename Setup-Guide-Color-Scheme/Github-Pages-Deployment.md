@@ -8,9 +8,9 @@ GET https://username.github.io/src/main.jsx net::ERR_ABORTED 404
 
 ### What this means:
 
-- The `index.html` file is trying to load `src/main.jsx` as if it's a file on the server.
-- On **production (GitHub Pages)**, it should load the **bundled and built files**, **not** the raw `.jsx` files.
-- Currently, **source code** is being deployed, but GitHub Pages requires the **built files** from the `dist` folder.
+- The `index.html` file is attempting to load `src/main.jsx` directly from the server.
+- On **production (GitHub Pages)**, it should reference the **bundled and built files**, rather than the raw `.jsx` files.
+- This error typically indicates that the **source code** has been deployed instead of the **compiled files** from the `dist` folder.
 
 ---
 
@@ -20,7 +20,7 @@ GET https://username.github.io/src/main.jsx net::ERR_ABORTED 404
 
 ### **Step 1: Install `gh-pages`**
 
-In the terminal, run the following command inside the project root directory:
+The developer should install the `gh-pages` package as a development dependency. Inside the project root directory, they can run:
 
 ```bash
 npm install --save-dev gh-pages
@@ -30,14 +30,14 @@ npm install --save-dev gh-pages
 
 ### **Step 2: Update `vite.config.js`**
 
-Ensure the `base` property in `vite.config.js` points to the GitHub repository name.
+In the `vite.config.js` file, ensure the `base` property correctly points to the GitHub repository name. This is critical for GitHub Pages to resolve paths correctly.
 
 ```javascript
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
 
 export default defineConfig({
-  base: "/repository-name/", // 👈 Replace with the repo name!
+  base: "/repository-name/", // 👈 Replace with the repository name!
   plugins: [react()],
 });
 ```
@@ -46,7 +46,7 @@ export default defineConfig({
 
 ### **Step 3: Edit `package.json` Scripts**
 
-In the `package.json` file, update the scripts section to include deploy commands:
+In the `package.json` file, add or update the scripts section to include deploy commands. This automates the build and deploy process.
 
 ```json
 "scripts": {
@@ -66,13 +66,13 @@ In the `package.json` file, update the scripts section to include deploy command
 
 ### **Step 4: Set the Correct Remote Repository**
 
-Inside the project directory, run the following command to link the repository:
+The developer should verify and set the GitHub remote URL using:
 
 ```bash
 git remote set-url origin https://github.com/username/repository-name.git
 ```
 
-Verify with:
+They can confirm it with:
 
 ```bash
 git remote -v
@@ -87,9 +87,9 @@ origin  https://github.com/username/repository-name.git (push)
 
 ---
 
-### **Step 5: Commit and Push the Code (Optional but Recommended)**
+### **Step 5: Commit and Push the Code**
 
-If there are changes, commit and push them to GitHub:
+If there are changes in the local project, the developer should commit and push them to GitHub using:
 
 ```bash
 git add .
@@ -97,7 +97,7 @@ git commit -m "Updated site for gh-pages deployment"
 git push origin main
 ```
 
-_(Replace `main` with the branch name if different)_
+_(Replace `main` with the appropriate branch name if necessary)_
 
 ---
 
@@ -109,7 +109,7 @@ _(Replace `main` with the branch name if different)_
 
 #### a) Inside `package.json`:
 
-Make sure the deploy script points to the repository.
+Make sure the `deploy` script explicitly points to the repository:
 
 ```json
 "deploy": "gh-pages -d dist -r https://github.com/username/repository-name.git"
@@ -125,17 +125,17 @@ npx gh-pages -d dist -r https://github.com/username/repository-name.git
 
 ### **Step 7: Deploy the Project**
 
-Run the deployment command:
+The developer can now deploy the project by running:
 
 ```bash
 npm run deploy
 ```
 
-✅ What happens:
+✅ What happens during deployment:
 
-- Builds the app into the `/dist` folder.
-- Pushes the `dist` contents to the `gh-pages` branch.
-- GitHub Pages will serve the **built files**, **not** the raw source files.
+- The app is built into the `/dist` folder.
+- The contents of `dist` are pushed to the `gh-pages` branch.
+- GitHub Pages serves the **built files**, not the raw source files.
 
 ---
 
@@ -157,7 +157,7 @@ npm run deploy
 
 ### **Step 9: Access the Live Site**
 
-After ~1 minute, the website should be live at:  
+After ~1 minute, the deployed website should be live at:  
 👉 `https://username.github.io/repository-name/`
 
 ---
@@ -166,12 +166,12 @@ After ~1 minute, the website should be live at:
 
 ### 🔹 **What was wrong?**
 
-The project was pointing to `src/main.jsx`, which doesn't exist in the built files. GitHub Pages serves from `/dist/index.html` and needs bundled files.
+The project was referencing `src/main.jsx`, which doesn't exist in the production build. GitHub Pages serves from `/dist/index.html` and requires compiled, bundled files.
 
 ### 🔹 **What was done?**
 
-- Built the project with `vite build`.
-- Deployed the `/dist` folder with `gh-pages`.
+- The app was built using `vite build`.
+- The `/dist` folder was deployed with `gh-pages`.
 
 ---
 
@@ -190,12 +190,33 @@ The project was pointing to `src/main.jsx`, which doesn't exist in the built fil
 | Action         | Command                                             |
 | -------------- | --------------------------------------------------- |
 | Install        | `npm install gh-pages --save-dev`                   |
+| Build          | `npm run build`                                     |
 | Build & Deploy | `npm run deploy`                                    |
 | GitHub Pages   | Configure GitHub Pages to use the `gh-pages` branch |
 
 ---
 
+## ✅ **Important Note for Next Time**
+
+For every new deployment, the developer should follow these two key steps:
+
+1. **Run the build command**
+
+   ```bash
+   npm run build
+   ```
+
+   This creates the latest production-ready files inside the `/dist` folder.
+
+2. **Deploy the built files**
+   ```bash
+   npm run deploy
+   ```
+   This pushes the `/dist` contents to the `gh-pages` branch.
+
+---
+
 ## ✅ **Final Result**
 
-👉 The website should be successfully live at:  
+👉 After following all steps correctly, the website will be successfully live at:  
 `https://username.github.io/repository-name/`
