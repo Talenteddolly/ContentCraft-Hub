@@ -196,23 +196,41 @@ The project was referencing `src/main.jsx`, which doesn't exist in the productio
 
 ---
 
-## ✅ **Important Note for Next Time**
+## ✅ **Important Note for Future Deployments**
 
-For every new deployment, the developer should follow these two key steps:
+For every new deployment, the developer should follow these steps to ensure the latest production build is published:
 
-1. **Run the build command**
+1. **Run the Deploy Command**
 
-   ```bash
-   npm run build
-   ```
-
-   This creates the latest production-ready files inside the `/dist` folder.
-
-2. **Deploy the built files**
    ```bash
    npm run deploy
    ```
-   This pushes the `/dist` contents to the `gh-pages` branch.
+
+   ✅ This command **automatically runs the build process first**, because the `predeploy` script in `package.json` triggers `npm run build` before deploying. It builds the project and pushes the latest `/dist` files to the `gh-pages` branch.
+
+---
+
+### 🔹 **When to Use `npm run build` Separately?**
+
+Running `npm run build` on its own is only necessary if the developer wants to:
+
+- **Test the production build locally**  
+  For example, by running:
+  ```bash
+  npm run build
+  npm run preview
+  ```
+- **Inspect the contents of the `/dist` folder**
+- **Prepare files for manual deployment or uploading elsewhere**
+
+---
+
+### ✅ **Quick Recap**
+
+- For standard deployments:  
+  ➡️ Just run `npm run deploy`.
+- For testing the build before deploying (optional):  
+  ➡️ Run `npm run build` followed by `npm run preview`.
 
 ---
 
