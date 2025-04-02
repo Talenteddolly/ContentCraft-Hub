@@ -1,0 +1,84 @@
+.cards-section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 350px;
+    height: 450px;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+    background: #dde03f;
+    /* Pastel Pink */
+    border: 5px solid #6ba4a1;
+    /* Deep Teal */
+}
+
+/* Hover Effect with Glowing */
+.card:hover {
+    background: #6ba4a1;
+    /* Darker Professional Pink */
+    border-color: #db62be;
+    /* Deep Brick */
+    transform: scale(1.05);
+    animation: glowing 1.5s ease-in-out infinite;
+    /* Glowing effect */
+}
+
+/* 🔹 Image Styles */
+.card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+/* 🔹 Image Styles */
+.card img:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* 🔹 Card Content */
+.card-body {
+    padding: 20px;
+    flex-grow: 1;
+}
+
+.card-title {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #364a55;
+    /* Deep Teal */
+    transition: color 0.3s ease;
+}
+
+.card-text {
+    font-size: 0.9rem;
+    color: black;
+    /* Subtle Gray */
+    height: 60px;
+    overflow: hidden;
+    transition: color 0.3s ease;
+}
+
+/* 🔹 Text Color Change on Hover */
+.card:hover .card-title {
+    color: #ffffff;
+    /* White for contrast */
+}
+
+.card:hover .card-text {
+    color: #fcefe8;
+    /* Soft Cream */
+}
