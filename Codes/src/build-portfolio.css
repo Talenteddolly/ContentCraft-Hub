@@ -1,0 +1,26 @@
+.section-heading {
+    margin-top: 2.5rem;
+    margin-bottom: 2.5rem;
+    font-size: 1.75rem;
+    color: #6a11cb;
+    font-weight: bold;
+    font-family: "Helvetica Neue", sans-serif;
+}
+
+/* Styling for links within descriptions */
+.content-card a {
+    color: #6a11cb;
+    /* Dark black color */
+    font-weight: bold;
+    /* Bold text */
+    text-decoration: underline;
+    /* Remove underline */
+}
+
+.content-card a:hover {
+    text-decoration: underline;
+    /* Underline on hover */
+    color: #007bff;
+    /* Optional: Change color on hover */
+    font-weight: bold;
+}

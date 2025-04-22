@@ -1,0 +1,119 @@
+.signup-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin-top: -30px;
+}
+
+.signup-card {
+    padding: 2rem;
+    border-radius: 18px;
+    box-shadow: 0 15px 15px rgba(0, 0, 0, 0.2);
+    width: 350px;
+    text-align: center;
+    border: 2px solid #6a11cb !important;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+/* Glowing effect on hover */
+.signup-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px rgba(106, 17, 203, 0.7);
+}
+
+.signup-card h2 {
+    margin-bottom: 1rem;
+    color: #333;
+    font-weight: bold;
+    font-family: "Helvetica Neue";
+    font-size: 2.2em;
+}
+
+.input-group {
+    margin-bottom: 1rem;
+    text-align: left;
+}
+
+.input-group label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #555;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #e749bc;
+    border-radius: 6px;
+    background-color: rgb(243, 238, 238);
+    font-size: 16px;
+    color: #333;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+}
+
+.signin-link {
+    margin-top: 10px;
+}
+
+.signin-link a {
+    color: #6115b3;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.signin-link a:hover {
+    text-decoration: underline;
+}
+
+.sign-up-btn {
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background-color 0.3s, color 0.3s;
+    color: whitesmoke;
+    font-weight: bold;
+    background-color: #6a11cb;
+}
+
+.sign-up-btn:hover {
+    background-color: #77616a;
+    color: #edf3eb;
+}
+
+/* Media Query for Smaller Screens */
+@media (max-width: 480px) {
+    .signup-card {
+        padding: 1.5rem;
+        border-radius: 12px;
+        width: 95%;
+    }
+
+    .signup-card h2 {
+        font-size: 1.8em;
+    }
+
+    .input-group input {
+        font-size: 14px;
+        padding: 8px;
+    }
+}
+
+/* Media Query for Tablets */
+@media (max-width: 768px) {
+    .signup-container {
+        height: auto;
+        margin-top: 0;
+        padding: 40px 20px;
+    }
+
+    .signup-card {
+        width: 80%;
+        max-width: 400px;
+    }
+}

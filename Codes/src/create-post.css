@@ -1,0 +1,296 @@
+/* Container for creating a post, centered horizontally and vertically */
+.create-post-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    /* Full viewport height */
+    margin-top: -100px;
+    /* Offset the form from the top */
+}
+
+/* Parent container */
+.center-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    /* Full viewport height */
+    margin: 0;
+    /* Remove default margin */
+}
+
+.create-post-card {
+    padding: 2rem;
+    border-radius: 18px;
+    box-shadow: 0 15px 15px rgba(0, 0, 0, 0.2);
+    width: 350px;
+    /* Card width */
+    text-align: center;
+    border: 2px solid #6a11cb !important;
+    /* Outline color */
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    margin-top: 40px;
+    /* Optional, adjust if necessary */
+    margin-bottom: 15px;
+    margin-left: 40%;
+}
+
+/* Hover effect for the card */
+.create-post-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px rgba(106, 17, 203, 0.7);
+    /* Hover box-shadow */
+}
+
+/* Styling for the header inside the card */
+.create-post-card h2 {
+    margin-bottom: 1rem;
+    color: #333;
+    font-weight: bold;
+    font-family: "Helvetica Neue";
+    font-size: 2.2em;
+}
+
+/* Styling for input groups inside the form */
+.input-group {
+    margin-bottom: 1rem;
+    text-align: left;
+    /* Align label to the left */
+}
+
+/* Label styling */
+.input-group label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #555;
+    /* Label color */
+}
+
+/* Select and textarea styling */
+.input-group select,
+.input-group textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #e749bc;
+    /* Border color */
+    border-radius: 6px;
+    background-color: rgb(243, 238, 238);
+    /* Background color */
+    font-size: 16px;
+    color: #333;
+    /* Text color */
+}
+
+/* Button styling for submitting the form */
+.create-post-btn {
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background-color 0.3s, color 0.3s;
+    color: whitesmoke;
+    background-color: #6a11cb;
+}
+
+/* Hover effect for the submit button */
+.create-post-btn:hover {
+    background-color: #77616a;
+    color: #edf3eb;
+}
+
+/* Container for all content (like cards and the form) */
+.content-container {
+    padding: 40px 20px;
+    text-align: center;
+    min-height: 100vh;
+}
+
+/* Title of the content section */
+.content-title {
+    font-size: 2.7rem;
+    color: #6a11cb;
+    margin-bottom: 2rem;
+    font-family: "Helvetica Neue", sans-serif;
+    font-weight: bold;
+}
+
+/* Grid layout for the content cards */
+.card-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.5rem;
+}
+
+/* Styling for individual cards */
+.content-card {
+    padding: 1.5rem;
+    width: 280px;
+    border-radius: 16px;
+    box-shadow: 0 10px 15px rgba(106, 17, 203, 0.15);
+    border: 2px solid #6a11cb;
+    /* Border color */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hover effect for content cards */
+.content-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px rgba(106, 17, 203, 0.4);
+}
+
+/* Icon styling inside content cards */
+.card-icon {
+    font-size: 2.2rem;
+    color: #6a11cb;
+    /* Icon color */
+    margin-bottom: 0.8rem;
+}
+
+/* Title inside the content card */
+.content-card h3 {
+    margin-bottom: 0.5rem;
+    color: #333;
+    font-size: 1.3rem;
+    font-weight: bold;
+}
+
+/* Paragraph styling inside the content cards */
+.content-card p {
+    color: black;
+    font-size: 0.95rem;
+    line-height: 1.4;
+}
+
+/* Responsive styling for tablets and medium screens */
+@media (min-width: 768px) and (max-width: 1300px) {
+
+    /* Adjust form card for medium screens */
+    .create-post-card {
+        width: 40%;
+        margin-top: 20px;
+        margin-left: 30%;
+        /* Reduce the margin on medium devices */
+    }
+}
+
+/* Responsive styling for smaller screens */
+@media (max-width: 768px) {
+
+    /* Stack cards vertically */
+    .card-grid {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    /* Make cards take more width on smaller screens */
+    .content-card {
+        width: 90%;
+    }
+
+    /* Reduce font size for title on smaller screens */
+    .content-title {
+        font-size: 2rem;
+    }
+}
+
+/* Additional margin between content cards and form */
+.create-post-container {
+    margin-top: 30px;
+    /* Spacing between the last row of cards and the form */
+}
+
+/* Responsive styling for smaller screens */
+@media (max-width: 768px) {
+
+    /* Stack cards vertically */
+    .card-grid {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    /* Make cards take more width on smaller screens */
+    .content-card {
+        width: 90%;
+    }
+
+    /* Reduce font size for title on smaller screens */
+    .content-title {
+        font-size: 2rem;
+    }
+
+    /* Adjust form card for smaller screens */
+    .create-post-card {
+        width: 90%;
+        margin-top: 20px;
+        /* Reduce the margin on mobile */
+    }
+
+    /* Adjust the button size for mobile */
+    .create-post-btn {
+        width: 100%;
+        padding: 1rem;
+        font-size: 1.2rem;
+    }
+
+    /* Adjust the input fields for mobile */
+    .input-group select,
+    .input-group textarea {
+        font-size: 14px;
+    }
+
+    /* Adjust icon size inside content cards */
+    .card-icon {
+        font-size: 1.8rem;
+    }
+
+    /* Adjust card title size */
+    .content-card h3 {
+        font-size: 1.1rem;
+    }
+
+    /* Reduce padding in the content cards */
+    .content-card {
+        padding: 1rem;
+    }
+}
+
+/* Additional adjustments for very small devices (portrait mobile) */
+@media (max-width: 480px) {
+
+    /* Further reduce font sizes */
+    .content-title {
+        font-size: 1.8rem;
+    }
+
+    /* Make form card take up more width */
+    .create-post-card {
+        width: 95%;
+        margin-left: 10px;
+    }
+
+    /* Adjust card icons */
+    .card-icon {
+        font-size: 1.6rem;
+    }
+
+    /* Further adjust input fields */
+    .input-group select,
+    .input-group textarea {
+        font-size: 13px;
+    }
+
+    /* Adjust button size */
+    .create-post-btn {
+        font-size: 1rem;
+    }
+
+    /* Adjust margin and padding to avoid overflow */
+    .create-post-container {
+        margin-top: 15px;
+    }
+}

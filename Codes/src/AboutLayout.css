@@ -1,0 +1,273 @@
+/* AboutLayout.css */
+
+/* Overall layout */
+.about-layout {
+    padding: 2rem;
+}
+
+/* About Header */
+.about-header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.about-header h1 {
+    font-size: 3rem;
+    font-weight: bold;
+    color: #364a55;
+}
+
+.about-header p {
+    font-size: 1.2rem;
+    color: #364a55;
+}
+
+.about-content {
+    margin-bottom: 2rem;
+}
+
+/* Mission Section */
+.mission {
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-top: 2rem;
+    border: 2px solid #9c7fa5;
+    /* Lavender border */
+    transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.mission:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transform: scale(1.05);
+    border: 2px solid #9c7fa5;
+    /* Lavender border */
+    animation: glow 1s ease-in-out infinite alternate;
+}
+
+.mission h2 {
+    font-size: 2.5rem;
+    color: #364a55;
+    margin-bottom: 1rem;
+}
+
+.mission p {
+    font-size: 1.2rem;
+    color: #333;
+}
+
+/* Vision Section */
+.vision {
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-top: 2rem;
+    border: 2px solid #9c7fa5;
+    /* Lavender border */
+    transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.vision:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transform: scale(1.05);
+    border: 2px solid #9c7fa5;
+    /* Lavender border */
+    animation: glow 1s ease-in-out infinite alternate;
+}
+
+.vision h2 {
+    font-size: 2.5rem;
+    color: #364a55;
+    margin-bottom: 1rem;
+}
+
+.vision p {
+    font-size: 1.2rem;
+    color: #333;
+}
+
+/* Team Section */
+.team {
+    margin-top: 3rem;
+}
+
+.team h2 {
+    font-size: 2.5rem;
+    color: #364a55;
+    margin-bottom: 2rem;
+}
+
+.team-members {
+    display: flex;
+    justify-content: space-around;
+    gap: 2rem;
+    flex-wrap: wrap;
+    /* Allow wrapping on small screens */
+}
+
+/* Individual team member */
+.team-member {
+    text-align: center;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border: 2px solid #9c7fa5;
+    /* Lavender border */
+    transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+    flex: 1 1 calc(33% - 2rem);
+    /* Default: 3 items per row */
+    margin-bottom: 2rem;
+}
+
+/* Hover effect for team member */
+.team-member:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transform: scale(1.05);
+    border: 2px solid #9c7fa5;
+    /* Lavender border */
+    animation: glow 1s ease-in-out infinite alternate;
+}
+
+.team-photo {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.team-member h3 {
+    margin-top: 1rem;
+    font-size: 1.5rem;
+    color: #333;
+}
+
+.team-member p {
+    font-size: 1.2rem;
+    color: #333;
+}
+
+.team-member h3,
+.team-member p {
+    transition: color 0.3s ease;
+}
+
+.team-member:hover h3,
+.team-member:hover p {
+    color: black;
+}
+
+/* Back Home Button */
+.back-home {
+    text-align: center;
+    margin-top: 3rem;
+}
+
+.back-btn {
+    font-size: 1.2rem;
+    padding: 0.5rem 1.5rem;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    border: 2px solid #9c7fa5;
+    /* Lavender border */
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.back-btn:hover {
+    background: #92b8b3;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Glow Effect Animation */
+@keyframes glow {
+    0% {
+        box-shadow: 0 0 5px #6ba4a1, 0 0 10px #6ba4a1, 0 0 15px #6ba4a1;
+    }
+
+    50% {
+        box-shadow: 0 0 10px #6ba4a1, 0 0 20px #6ba4a1, 0 0 30px #6ba4a1;
+    }
+
+    100% {
+        box-shadow: 0 0 5px #6ba4a1, 0 0 10px #6ba4a1, 0 0 15px #6ba4a1;
+    }
+}
+
+/* Media Queries for Mobile Responsiveness */
+@media (max-width: 768px) {
+
+    /* Adjust header font size on small screens */
+    .about-header h1 {
+        font-size: 2rem;
+    }
+
+    .about-header p {
+        font-size: 1rem;
+    }
+
+    /* Adjust mission, vision, and team sections */
+    .mission h2,
+    .vision h2,
+    .team h2 {
+        font-size: 2rem;
+    }
+
+    .mission p,
+    .vision p {
+        font-size: 1rem;
+    }
+
+    /* Adjust team member section for mobile */
+    .team-members {
+        justify-content: center;
+    }
+
+    .team-member {
+        flex: 1 1 100%;
+        /* 1 item per row on small screens */
+        margin-bottom: 2rem;
+    }
+
+    /* Adjust back button size */
+    .back-btn {
+        font-size: 1rem;
+        padding: 0.5rem 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+
+    /* Further adjust the font sizes for very small screens */
+    .about-header h1 {
+        font-size: 1.5rem;
+    }
+
+    .about-header p {
+        font-size: 0.9rem;
+    }
+
+    .mission h2,
+    .vision h2,
+    .team h2 {
+        font-size: 1.8rem;
+    }
+
+    .mission p,
+    .vision p {
+        font-size: 0.9rem;
+    }
+
+    .team-member h3 {
+        font-size: 1.2rem;
+    }
+
+    .team-member p {
+        font-size: 1rem;
+    }
+
+    /* Ensure team members stack properly */
+    .team-members {
+        flex-direction: column;
+    }
+}

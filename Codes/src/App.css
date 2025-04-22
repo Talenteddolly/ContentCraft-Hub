@@ -1,0 +1,492 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Raleway:wght@500;700&display=swap');
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Body and Html basic styles */
+body {
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg, #f6e8d4, #dde03f, #edf3eb, #6ba4a1, #db62be, #f6e8d4) !important;
+  /* Pastel Colors */
+  color: #364a55;
+  /* Deep Teal */
+  margin: 0;
+  padding: 0;
+}
+
+/* Header + Footer full width */
+.navbar,
+.footer {
+  width: 100vw;
+  /* Full viewport width */
+}
+
+/* ======================== */
+/* HEADER NAVBAR WRAPPER */
+/* ======================== */
+.navbar {
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+  flex-wrap: wrap !important;
+  /* Responsive stacking */
+  padding: 1rem 2rem !important;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  position: relative;
+  top: 0;
+  z-index: 1000;
+}
+
+/* LEFT: Logo & Title */
+.left-section {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+}
+
+.logo-img {
+  height: 60px;
+  width: 60px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #e5d8c6;
+}
+
+/* Title next to logo */
+.site-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #364a55;
+  display: flex;
+  align-items: center;
+}
+
+.feather-icon {
+  margin-right: 0.5rem;
+  color: #77616a;
+  /* Muted Plum */
+  font-size: 1.5rem;
+}
+
+/* CENTER: Navigation Links */
+.nav-links {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.nav-item {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: #364a55;
+  font-size: 1rem;
+  transition: color 0.3s;
+  gap: 0.5rem;
+}
+
+.nav-item:hover {
+  color: #667b34;
+  /* Ocean Teal */
+}
+
+.nav-icon {
+  font-size: 1.2rem;
+}
+
+.nav-label {
+  font-size: 1rem;
+}
+
+/* RIGHT: Sign In / Sign Up Buttons */
+.auth-buttons {
+  display: flex;
+  gap: 1rem;
+}
+
+/* Add space between icon and text */
+.btn-icon {
+  margin-right: 8px;
+  /* Adjust the space as needed */
+}
+
+.signin-btn,
+.signup-btn {
+  padding: 0.5rem 1rem;
+  font-size: 0.9rem;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background-color 0.3s, color 0.3s;
+  color: #364a55;
+  font-weight: bold;
+}
+
+.signin-btn {
+  background-color: rgb(228, 203, 169);
+}
+
+.signup-btn {
+  background-color: #7adcd7;
+}
+
+.signin-btn:hover {
+  background-color: #77616a;
+  color: #edf3eb;
+}
+
+.signup-btn:hover {
+  background-color: #364a55;
+  color: #edf3eb;
+}
+
+/* ======================== */
+/* MAIN CONTENT */
+/* ======================== */
+.main-content {
+  padding: 2rem;
+  text-align: center;
+}
+
+.hero-section {
+  padding: 4rem 2rem;
+}
+
+.tagline {
+  font-family: 'Raleway', sans-serif;
+  color: #77616a;
+  /* Muted Plum */
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 2rem;
+}
+
+.primary-btn {
+  background-color: #6ba4a1;
+  /* Ocean Teal */
+  color: #edf3eb;
+  border: none;
+  padding: 1rem 2rem;
+  font-size: 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background-color 0.3s;
+  text-align: center;
+  white-space: nowrap;
+  /* Prevents text wrapping */
+  text-decoration: none;
+  font-size: 1.2em;
+}
+
+.primary-btn:hover {
+  background-color: #364a55;
+  /* Deep Teal */
+  color: wheat;
+}
+
+.btn-icon {
+  font-size: 1.2rem;
+  /* Adjust icon size */
+}
+
+.info-section {
+  margin-top: 3rem;
+  color: whitesmoke;
+  font-weight: bold;
+  font-size: 1.9em;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+/* Our Services Heading */
+.services-heading {
+  font-size: 2.2rem;
+  text-align: center;
+  color: coral;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  /* Space between icon and text */
+  margin-top: 20px;
+}
+
+.services-icon {
+  font-size: 2.5rem;
+  color: coral;
+}
+
+/* ======================== */
+/* FOOTER */
+/* ======================== */
+.footer {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: #335;
+  /* Earthy Olive */
+  font-size: 1.1rem;
+  font-weight: bold;
+
+  padding: 1rem 2rem;
+  /* Increased padding for more space inside the footer */
+
+  box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1);
+  /* Top box-shadow */
+
+  /* Ensuring the footer is at the bottom of the page */
+  position: relative;
+  margin-top: auto;
+  /* Pushes footer to the bottom of the container */
+  z-index: 1000;
+}
+
+.footer-icons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 0.5rem;
+}
+
+.footer-icons a {
+  color: #333;
+  /* Earthy Olive */
+  font-size: 1.5rem;
+  transition: color 0.3s;
+  font-weight: bold;
+}
+
+.footer-icons a:hover {
+  color: blanchedalmond;
+  /* Subtle hover color */
+}
+
+/* ------------------------------ */
+/* Mobile Styles for Small Devices */
+/* Screen width: 480px and below */
+/* ------------------------------ */
+@media (max-width: 480px) {
+
+  /* Our Services Heading */
+  .services-heading {
+    font-size: 1.5rem;
+  }
+
+  .services-icon {
+    font-size: 1.6rem;
+  }
+
+  /* Shrink logo size for small screens */
+  .logo-img {
+    height: 50px;
+    width: 50px;
+  }
+
+  /* Reduce site title font size for better fit */
+  .site-title {
+    font-size: 1rem;
+  }
+
+  /* Make sign-in/sign-up buttons smaller for mobile screens */
+  .signin-btn,
+  .signup-btn {
+    padding: 0.4rem 0.8rem;
+    /* Smaller padding */
+    font-size: 0.8rem;
+    /* Smaller text size */
+  }
+
+  .info-section {
+    font-size: 1.6em;
+  }
+}
+
+/* -------------------------------------------- */
+/* Tablet and Medium Screen Styles (Portrait)   */
+/* Screen width: 768px and below (including 480px above) */
+/* -------------------------------------------- */
+@media (max-width: 768px) {
+
+  /* Navbar layout switches to vertical stacking */
+  .navbar {
+    flex-direction: column;
+    /* Stack nav elements vertically */
+    align-items: center;
+    /* Center all child elements */
+    padding: 1rem;
+    /* More breathing room */
+  }
+
+  /* Left section (logo + title) adjustments */
+  .left-section {
+    justify-content: center;
+    /* Center logo/title vertically */
+    flex-direction: column;
+    /* Stack logo and title vertically */
+    gap: 0.5rem;
+    /* Add spacing between logo and title */
+    width: 100%;
+    /* Full width to span screen */
+  }
+
+  /* Center logo inside its container */
+  .logo-container {
+    justify-content: center;
+    /* Center horizontally */
+  }
+
+  /* Center and resize site title */
+  .site-title {
+    justify-content: center;
+    /* Align horizontally */
+    text-align: center;
+    /* Center text inside title */
+    font-size: 1.3rem;
+    /* Resize for tablets */
+  }
+
+  /* Navigation links wrap to new lines if needed */
+  .nav-links {
+    flex-direction: row;
+    /* Keep links in a row */
+    flex-wrap: wrap;
+    /* Allow wrapping to next line */
+    justify-content: center;
+    /* Center nav links */
+    width: 100%;
+    /* Full width to span the container */
+    margin: 1rem 0;
+    /* Add space above/below */
+    gap: 1rem;
+    /* Space between links */
+  }
+
+  /* Auth buttons alignment and spacing */
+  .auth-buttons {
+    flex-direction: row;
+    /* Place buttons side by side */
+    justify-content: center;
+    /* Center buttons horizontally */
+    width: 100%;
+    /* Span the full container width */
+    margin-bottom: 1rem;
+    /* Space below the buttons */
+  }
+
+  /* Resize auth buttons */
+  .signin-btn,
+  .signup-btn {
+    width: auto;
+    /* Let buttons size to content */
+    padding: 0.6rem 1.2rem;
+    /* Slightly bigger padding for touch */
+  }
+
+  /* Hero section responsiveness */
+  .hero-section {
+    padding: 2rem 1rem;
+    /* Reduce horizontal padding */
+    width: 100%;
+    /* Full width for mobile */
+    box-sizing: border-box;
+    /* Include padding in width calculation */
+  }
+
+  /* Resize tagline text */
+  .tagline {
+    font-size: 1.5rem;
+    /* Slightly smaller for better fit */
+  }
+
+  /* Footer layout adjustments */
+  .footer {
+    flex-direction: column;
+    /* Stack footer sections vertically */
+    padding: 1rem 0;
+    /* Add vertical padding */
+  }
+
+  /* Footer icons layout */
+  .footer-icons {
+    flex-wrap: wrap;
+    /* Allow icons to wrap */
+    justify-content: center;
+    /* Center icons */
+    width: 100%;
+    /* Full width */
+    gap: 1rem;
+    /* Space between icons */
+    margin-bottom: 0.5rem;
+    /* Space below icons block */
+  }
+
+  /* Footer icon links sizing */
+  .footer-icons a {
+    flex: 1 0 15%;
+    /* Each icon takes 15% width; responsive */
+    text-align: center;
+    /* Center each icon */
+  }
+}
+
+/* ---------------------------------------------------------- */
+/* Medium to Large Tablet / Small Laptop Screen Styles        */
+/* Screen width: between 768px and 1024px (including Asus 853px) */
+/* ---------------------------------------------------------- */
+@media (min-width: 768px) and (max-width: 1024px) {
+
+  /* Center the auth buttons */
+  .auth-buttons {
+    justify-content: center;
+    /* Center horizontally */
+    width: 100%;
+    /* Full width for alignment */
+  }
+
+  /* Resize auth buttons for medium screens */
+  .signin-btn,
+  .signup-btn {
+    padding: 0.7rem 1.5rem;
+    /* More generous padding */
+    font-size: 1rem;
+    /* Increase font size slightly */
+  }
+}
+
+.custom-btn {
+  background-color: #ff6347;
+  /* Bright Coral */
+  color: #ffffff;
+  /* White for contrast */
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-weight: bold;
+  transition: 0.3s ease-in-out;
+  font-size: 1em;
+}
+
+.custom-btn:hover {
+  background-color: #e53e26;
+  /* Darker Coral for hover */
+}
+
+.about-section {
+  background-color: lightblue;
+  /* Just to test visibility */
+  padding: 20px;
+}
